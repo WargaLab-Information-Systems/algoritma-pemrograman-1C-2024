@@ -7,7 +7,6 @@ tinggi = 7
 Volume_balok = panjang*lebar*tinggi
 print("Hasil volume balok dari data tersebut adalah ",Volume_balok)
 
-
 import math
 
 # Meminta input dari pengguna
