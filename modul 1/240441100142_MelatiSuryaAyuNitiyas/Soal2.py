@@ -18,3 +18,4 @@ a = 11 - 4 * d
 jumlah_8_suku_pertama = 8 / 2 * (2 * a + (8 - 1) * d)
 print("jumlah 8 suku pertama: ", jumlah_8_suku_pertama)
 
+

@@ -8,6 +8,7 @@
 # tinggi tabung : 4835.6
 
 
+
 # balok
 p_balok = 20
 l_balok = 13
