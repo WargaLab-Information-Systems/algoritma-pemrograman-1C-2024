@@ -20,4 +20,5 @@
 #     Jika tidak:
 #         Tampilkan "Maaf Ida, anda tidak lolos!!!"
 
+
 # Selesai

@@ -8,7 +8,7 @@ print("Nama Anda",nama)
 print("NIM Anda :",nim)
 print(f"Nilai rata-rata {nama} adalah {int(rata_rata)}")
 
-
+ 
 if rata_rata <= 100 and rata_rata >= 81 :
     print("Anda Mendapatkan Nilai A")
 elif  rata_rata <= 80 and rata_rata >= 71 :
