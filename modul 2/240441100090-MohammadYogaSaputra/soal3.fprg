@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="soal3"/>
+        <attribute name="authors" value="DELL"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-06 10:20:40 PM"/>
+        <attribute name="created" value="REVMTDtERVNLVE9QLUZTUjhLVDY7MjAyNC0xMC0wNjswODozOToyNSBQTTsyNjYy"/>
+        <attribute name="edited" value="REVMTDtERVNLVE9QLUZTUjhLVDY7MjAyNC0xMC0wNjsxMDoyMDo0MCBQTTsxOzI3NTA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="skorjaka" type="Integer" array="False" size=""/>
+            <declare name="skorida" type="Integer" array="False" size=""/>
+            <declare name="ipkjaka" type="Real" array="False" size=""/>
+            <declare name="ipkida" type="Integer" array="False" size=""/>
+            <assign variable="skorjaka" expression="1100"/>
+            <assign variable="ipkjaka" expression="3.5"/>
+            <assign variable="skorida" expression="1000"/>
+            <assign variable="ipkida" expression="3.5"/>
+            <if expression="skorjaka&gt;=1100 and ipkjaka&gt;=3.0">
+                <then>
+                    <output expression="&quot;Selamat jaka anda lulus beasiswa dengan skor&quot;&amp;skorjaka&amp;&quot; dan IPK&quot;&amp;ipkjaka" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;maaf jaka, anda tidak lulus&quot;" newline="True"/>
+                </else>
+            </if>
+            <if expression="skorida&gt;=1100 and ipkida &gt;=3.0">
+                <then>
+                    <output expression="&quot;Selamat ida anda lulus lulus beasiswa dengan skor&quot;&amp;skorida&amp;&quot;dan IPK&quot;&amp;ipkida" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;maaf ida, anda tidak lulus&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
