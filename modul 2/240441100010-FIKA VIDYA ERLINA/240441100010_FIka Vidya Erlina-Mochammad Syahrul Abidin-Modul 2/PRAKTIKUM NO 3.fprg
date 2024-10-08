@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PRAKTIKUM NO 3"/>
+        <attribute name="authors" value="Hewlett Packard"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-08 03:47:21 PM"/>
+        <attribute name="created" value="SGV3bGV0dCBQYWNrYXJkO0RFU0tUT1AtUTZQNkE4MTsyMDI0LTEwLTA3OzEyOjM0OjE4IFBNOzM3NjA="/>
+        <attribute name="edited" value="SGV3bGV0dCBQYWNrYXJkO0RFU0tUT1AtUTZQNkE4MTsyMDI0LTEwLTA4OzAzOjQ3OjIxIFBNOzI7Mzg2OA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nama" type="String" array="False" size=""/>
+            <declare name="nilai" type="Integer" array="False" size=""/>
+            <declare name="ipk" type="Real" array="False" size=""/>
+            <output expression="&quot;masukkan nama&quot;" newline="True"/>
+            <input variable="nama"/>
+            <output expression="&quot;masukkan nilai&quot;" newline="True"/>
+            <input variable="nilai"/>
+            <output expression="&quot;masukkan ipk&quot;" newline="True"/>
+            <input variable="ipk"/>
+            <if expression="nilai &gt; 1100 and ipk &gt;= 3.0">
+                <then>
+                    <output expression="nama &amp;  &quot; selamat anda dinyatakan LULUS persyaratan Beasiswa&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Mohon maaf &quot;  &amp;  nama  &amp;  &quot; anda dinyatakan TIDAK LULUS persyaratan Beasiswa&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
