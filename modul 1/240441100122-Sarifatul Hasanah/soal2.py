@@ -11,3 +11,4 @@ jumlah = (n / 2) * (2 * suku1 + (n - 1) * selisih)
 
 print("Jumlah 8 suku pertama adalah :", int(jumlah))
 
+
