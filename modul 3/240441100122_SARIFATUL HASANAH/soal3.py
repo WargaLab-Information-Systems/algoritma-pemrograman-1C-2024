@@ -21,4 +21,3 @@ while ulang == 'y' or ulang == 'Y' :
     ulang = input("Apakah ingin menghitung kembali? (y/t): ")
 
 print("Terima kasih!")
-

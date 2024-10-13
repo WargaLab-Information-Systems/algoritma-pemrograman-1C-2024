@@ -37,4 +37,3 @@ for baris in range(size):
         else:
             print(" ", end="")
     print()  
-
