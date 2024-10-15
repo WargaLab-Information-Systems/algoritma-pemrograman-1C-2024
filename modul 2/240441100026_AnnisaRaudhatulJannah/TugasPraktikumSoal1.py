@@ -4,7 +4,7 @@ nim = int(input("Masukan NIM: "))
 nilai_uts = int(input("Masukan Nilai UTS: "))
 nilai_uas = int(input("Masukan Nilai UAS: "))
 
-# Mengitung nilai rata-rata
+# Mengitung nilai  rata-rata
 nilai_rata_rata = (nilai_uts + nilai_uas) / 2
 
 # Menentukan grade nilai
