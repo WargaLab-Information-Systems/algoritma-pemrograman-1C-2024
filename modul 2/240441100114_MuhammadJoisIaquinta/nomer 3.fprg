@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="flow"/>
+        <attribute name="authors" value="mjois"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-07 05:16:45 PM"/>
+        <attribute name="created" value="bWpvaXM7Sk9JUzsyMDI0LTEwLTA0OzAzOjIyOjA1IEFNOzIxMDk="/>
+        <attribute name="edited" value="bWpvaXM7Sk9JUzsyMDI0LTEwLTA3OzA1OjE2OjQ1IFBNOzQ7MjI0Nw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="SkorJaka, SkorIda" type="Integer" array="False" size=""/>
+            <declare name="IpkJaka, IpkIda" type="Integer" array="False" size=""/>
+            <declare name="Ipk, Skor" type="Integer" array="False" size=""/>
+            <assign variable="SkorJaka" expression="1100"/>
+            <assign variable="IpkJaka" expression="3.5"/>
+            <assign variable="SkorIda" expression="1000"/>
+            <assign variable="IpkIda" expression="3.5"/>
+            <assign variable="Skor" expression="1100"/>
+            <assign variable="Ipk" expression="3.0"/>
+            <if expression="SkorJaka &gt;Skor and IpkJaka &gt;=Ipk">
+                <then>
+                    <output expression="&quot;jaka lulus seleksi&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Jaka tidak lulus seleksi&quot;" newline="True"/>
+                </else>
+            </if>
+            <if expression="SkorIda &gt;=Skor and IpkIda&gt;= Ipk">
+                <then>
+                    <output expression="&quot;ida lulus seleksi&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;ida tidak lulus seleksi&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
