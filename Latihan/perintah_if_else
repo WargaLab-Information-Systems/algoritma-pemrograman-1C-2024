@@ -1,0 +1,7 @@
+# program perintah if_else
+Kunci = "Python"
+password = input("Masukkan Password : ")
+if password == Kunci :
+    print("Password Benar")
+else:
+    print("Password Salah")

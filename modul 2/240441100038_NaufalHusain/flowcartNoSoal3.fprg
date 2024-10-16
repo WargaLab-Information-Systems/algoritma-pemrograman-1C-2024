@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="flowcartNoSoal3"/>
+        <attribute name="authors" value="user"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-07 08:58:02 PM"/>
+        <attribute name="created" value="dXNlcjtMQVBUT1AtOTY1MDg5UzY7MjAyNC0xMC0wNjswNzo0Njo0NCBQTTsyNzAy"/>
+        <attribute name="edited" value="dXNlcjtMQVBUT1AtOTY1MDg5UzY7MjAyNC0xMC0wNzswODo1ODowMiBQTTsxOzI4MDk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="SkorJaka" type="Integer" array="False" size=""/>
+            <declare name="IpkJaka" type="Real" array="False" size=""/>
+            <assign variable="SkorJaka" expression="1100"/>
+            <assign variable="IpkJaka" expression="3.5"/>
+            <if expression="SkorJaka &gt;= 1100 and IpkJaka &gt;= 3.5">
+                <then>
+                    <output expression="&quot;Selamat Jaka, anda lulus persyaratan beasiswa&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot; Maaf Jaka, anda tidak lulus persyaratan beasiswa&quot;" newline="True"/>
+                </else>
+            </if>
+            <declare name="SkorIda" type="Integer" array="False" size=""/>
+            <declare name="IpkIda" type="Integer" array="False" size=""/>
+            <assign variable="SkorIda" expression="1000"/>
+            <assign variable="IpkIda" expression="3.5"/>
+            <if expression="SkorIda &gt;= 1000 and IpkIda &gt;= 3.5">
+                <then>
+                    <output expression="&quot;SElamat Ida, anda lulus persyaratan beasiswa&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Maaf Ida, anda tidak lulus persyaratan beasiswa&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
