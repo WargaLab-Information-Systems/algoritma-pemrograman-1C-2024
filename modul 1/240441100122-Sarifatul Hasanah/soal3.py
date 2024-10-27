@@ -4,4 +4,3 @@ hasil = dolar * rupiah
 
 print(f"Jumlah uang yang didapat: {hasil}")
 
-

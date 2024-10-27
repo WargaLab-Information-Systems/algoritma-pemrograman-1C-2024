@@ -12,3 +12,4 @@ kombinasi = faktorial_n / (faktorial_k * faktorial_nk) #5040 / 144
 
 print("Total cara membentuk tim Darsono : ", int(kombinasi))
 
+
