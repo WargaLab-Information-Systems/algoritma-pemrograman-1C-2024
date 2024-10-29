@@ -14,7 +14,6 @@ elif 61 <= nilai_rata_rata <= 70:
 elif 41 <= nilai_rata_rata <= 60:
     nilai = "D"
 elif 0 <= nilai_rata_rata <= 40:
-elif 0 <= nilai_rata_rata <= 41:
     nilai = "E"
 else:
     nilai = "tidak ada nilai"

@@ -5,11 +5,7 @@ if usia < 18:
     print("Maaf anda belum cukup usia untuk melakukan transaksi.")
 else:
     total_belanja = float(input("Masukkan total belanja: Rp"))
-
     kartu_member = input("Apakah Anda memiliki kartu member? (ya/tidak): ").lower()
-
-    kartu_member = input("Apakah Anda memiliki kartu member? (ya/tidak): ")
-
 
     # Variabel untuk diskon
     diskon = 0
@@ -31,9 +27,4 @@ else:
     print(f"Nama Pembeli: {nama_pembeli}")
     print(f"Diskon yang Didapatkan: {diskon}%")
     print(f"Total Harga Sebelum Diskon: Rp{total_belanja}")
-
     print(f"Total Harga Setelah Diskon: Rp{total_keseluruhan}")
-
-    print(f"Total Harga Setelah Diskon: Rp{total_keseluruhan}")
-    
-    
