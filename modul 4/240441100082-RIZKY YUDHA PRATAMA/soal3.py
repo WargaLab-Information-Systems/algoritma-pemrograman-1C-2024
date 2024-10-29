@@ -3,7 +3,6 @@ total_lembur = 0
 total_gaji_lembur = 0
 batas_lembur = 40
 
-
 for hari in range (1, 8):
     jam = int(input(f"masukkan jam lembur pada hari ke-{hari}: "))
 
