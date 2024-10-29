@@ -1,6 +1,7 @@
 # Input dari pengguna
 desimal = int(input("Masukkan bilangan desimal: "))
 
+
 # Mengonversi desimal ke biner
 biner = ''
 while desimal > 0:
