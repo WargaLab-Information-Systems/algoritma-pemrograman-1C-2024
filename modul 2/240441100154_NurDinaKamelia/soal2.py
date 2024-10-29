@@ -2,11 +2,7 @@
 jaka_skor = 1100 
 jaka_ipk = 3.5 
  
-
-# Data Ida 
-
 # Data Ida  
-
 ida_skor = 1000 
 ida_ipk = 3.5 
  
@@ -24,10 +20,4 @@ else:
 if ida_skor >= skor_minimal and ida_ipk >= ipk_minimal: 
     print("Ida memenuhi syarat beasiswa") 
 else: 
-
     print("Ida tidak memenuhi syarat beasiswa")
-
-    
-
-    print("Ida tidak memenuhi syarat beasiswa")
-

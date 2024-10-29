@@ -1,4 +1,5 @@
 
+
 print("berat badan saya adalah"+str(5))
 
 # untuk operator boolean
@@ -26,7 +27,7 @@ untuk union atau gabungan
 
 
 irisan 
-=======
+
 # ## printah if
 # # nama ="alpro"
 
