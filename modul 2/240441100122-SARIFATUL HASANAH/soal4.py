@@ -7,3 +7,4 @@ elif tahun % 4 == 0 :
     print(f"{tahun} merupakan tahun kabisat.") 
 else :
    print(f"{tahun} bukan tahun kabisat!!!")
+
