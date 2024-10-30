@@ -1,5 +1,3 @@
-
-
 print("berat badan saya adalah"+str(5))
 
 # untuk operator boolean
@@ -17,16 +15,11 @@ hasil_and = x and y
 hasil_or = x or y
 hasil_not = x not y
 
-
-
-
-
-
-
 untuk union atau gabungan
 
 
 irisan 
+
 
 # ## printah if
 # # nama ="alpro"
