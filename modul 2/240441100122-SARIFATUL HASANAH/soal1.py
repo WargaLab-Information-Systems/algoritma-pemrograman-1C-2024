@@ -22,4 +22,3 @@ elif rata_rata <= 40 and rata_rata >= 0 :
 else :
     print("Nilai yang dimasukkan salah")
 
-
