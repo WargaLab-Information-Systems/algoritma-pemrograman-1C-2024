@@ -11,3 +11,4 @@ else:
     print(f"{kata} bukan palindrom.")
     print(f"{kata[::-1]}")
 
+
