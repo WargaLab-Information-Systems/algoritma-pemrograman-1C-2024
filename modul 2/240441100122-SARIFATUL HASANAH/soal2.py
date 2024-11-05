@@ -19,3 +19,4 @@ if ida_skor > 1100 and ida_ipk >= 3.0 :
     print(f"Selamat {nama_ida}, anda lulus persyaratan beasiswa dengan skor sebanyak {ida_skor} dan IPK sebanyak {ida_ipk}")
 else :
     print(f"Maaf {nama_ida}, anda tidak lolos!!!")
+
