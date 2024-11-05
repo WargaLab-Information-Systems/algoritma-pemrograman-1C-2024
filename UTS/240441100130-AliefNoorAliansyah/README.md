@@ -1,0 +1,1 @@
+Kode ini tidak akan berjalan seperti yang diharapkan karena codingan belum lengkap.
