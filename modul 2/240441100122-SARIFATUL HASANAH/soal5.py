@@ -23,3 +23,4 @@ else:  # Menghitung diskon
     print(f"Total Diskon yang didapatkan: {int(total_diskon)}")
     print(f"Total harga sebelum diskon: Rp.{total_sebelum_diskon}")
     print(f"Total harga setelah diskon: Rp.{int(total_setelah_diskon)}")
+
