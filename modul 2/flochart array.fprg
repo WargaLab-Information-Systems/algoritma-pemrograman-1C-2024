@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="flochart array"/>
+        <attribute name="authors" value="Lenovo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-11-12 08:53:52 AM"/>
+        <attribute name="created" value="TGVub3ZvO1NSSUxBTUlOQU1BTklLOzIwMjQtMTEtMTI7MDg6NDA6MTYgQU07MjkyOA=="/>
+        <attribute name="edited" value="TGVub3ZvO1NSSUxBTUlOQU1BTklLOzIwMjQtMTEtMTI7MDg6NTM6NTIgQU07MTszMDQw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Bulan" type="String" array="True" size="5"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="4" direction="inc" step="1"/>
+        </body>
+    </function>
+</flowgorithm>

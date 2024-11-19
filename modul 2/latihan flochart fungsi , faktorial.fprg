@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="latihan flochart fungsi , faktorial"/>
+        <attribute name="authors" value="Lenovo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-11-12 08:24:52 AM"/>
+        <attribute name="created" value="TGVub3ZvO1NSSUxBTUlOQU1BTklLOzIwMjQtMTEtMTI7MDc6NTg6NTMgQU07MjkzNw=="/>
+        <attribute name="edited" value="TGVub3ZvO1NSSUxBTUlOQU1BTklLOzIwMjQtMTEtMTI7MDg6MjQ6NTIgQU07MTszMDM4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="x" type="Integer" array="False" size=""/>
+            <output expression="&quot;Masukkan x &quot;" newline="True"/>
+            <input variable="x"/>
+            <output expression="faktorial (x)" newline="True"/>
+        </body>
+    </function>
+    <function name="faktorial" type="Integer" variable="facto">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="facto, i" type="Integer" array="False" size=""/>
+            <assign variable="facto" expression="i"/>
+            <for variable="i" start="1" end="a" direction="inc" step="1">
+                <assign variable="facto" expression="facto*i"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
