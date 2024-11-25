@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="soal 3"/>
+        <attribute name="authors" value="SMILE"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-11-25 07:30:10 PM"/>
+        <attribute name="created" value="U01JTEU7REVTS1RPUC1INVNCQ0kyOzIwMjQtMTEtMjU7MDc6MTc6MzggUE07MjcxMg=="/>
+        <attribute name="edited" value="U01JTEU7REVTS1RPUC1INVNCQ0kyOzIwMjQtMTEtMjU7MDc6MzA6MTAgUE07MTsyODA1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Skorjaka" type="Integer" array="False" size=""/>
+            <declare name="ipkjaka" type="Real" array="False" size=""/>
+            <assign variable="skorjaka" expression="1100"/>
+            <assign variable="ipkjaka" expression="3.5"/>
+            <if expression="Skorjaka &gt;= 1100 and ipkjaka &gt;= 3.5">
+                <then>
+                    <output expression="&quot;Selamat jaka,anda lulus persyaratan beasiswa&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Maaf jaka,anda tidak lulus persyaratan beasiswa&quot;" newline="True"/>
+                </else>
+            </if>
+            <declare name="Skorida" type="Integer" array="False" size=""/>
+            <declare name="ipkida" type="Integer" array="False" size=""/>
+            <assign variable="skorida" expression="1000"/>
+            <assign variable="ipkida" expression="3.5"/>
+            <if expression="Skorida &gt;= 1000 and ipkida &gt;= 3.5">
+                <then>
+                    <output expression="&quot;selamat ida, anda lulus persyaratan beasiswa&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;maaf ida anda tidak lulus persyaratan beasiswa&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
