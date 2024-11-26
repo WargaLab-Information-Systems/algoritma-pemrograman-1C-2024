@@ -12,6 +12,10 @@ def tambah_alat(nama_alat, jumlah):
     if jumlah > 0:
         alat_yang_dipinjam.add(nama_alat)
 
+
+
+
+
 # Fungsi kurangi alat dengan dua parameter jenis, jumlah dengan type data string
 def kembalikan_alat(nama_alat, jumlah):
     if nama_alat in alat_kesehatan:

@@ -1,11 +1,10 @@
 # program menampilkan siswa yang mengikuti klub ekstrakulikuler di sekolah
+
+
 # Membuat dua set untuk siswa yang mengikuti klub Basket dan Renang
 # variabel basket, renang diinisialisasi sebagai set
 basket = set()
 renang = set()
-
-
-
 
 # program untuk menambahkan siswa ke set tertentu
 # fungsi tambah siswa dengan parameter nama, dan klub menggunakan tipe data string

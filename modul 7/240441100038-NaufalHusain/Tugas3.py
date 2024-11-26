@@ -4,7 +4,8 @@ class KelasBimbingan:
     def __init__(self, kelas):
         self.kelas = kelas
         self.siswa = []
-
+        
+    # membuat fungsi siswa dengan parameter self, nama, asal_sekolah untuk kondisi jika siswa kurang dari 3 maka menambahkan siswa dengan kelas yang sama
     def tambah_siswa(self, nama, asal_sekolah):
         if len(self.siswa) < 3:
             self.siswa.append({"nama": nama, "asal_sekolah": asal_sekolah})
