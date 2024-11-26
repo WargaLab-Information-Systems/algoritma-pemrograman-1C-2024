@@ -4,6 +4,9 @@
 basket = set()
 renang = set()
 
+
+
+
 # program untuk menambahkan siswa ke set tertentu
 # fungsi tambah siswa dengan parameter nama, dan klub menggunakan tipe data string
 def tambah_siswa(nama, klub):
