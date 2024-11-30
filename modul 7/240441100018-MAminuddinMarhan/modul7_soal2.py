@@ -1,0 +1,18 @@
+def input_set_nama(pesan):
+    print(pesan)
+    input_nama = input("Masukkan nama siswa (pisahkan dengan koma): ")
+    return {nama.strip() for nama in input_nama.split(",")}
+klub_basket = input_set_nama("\nDaftar Nama Siswa Yang Mengikuti Klub Basket:")
+klub_renang = input_set_nama("\nDaftar Nama Siswa Yang Mengikuti Klub Renang:")
+siswa_kedua_klub = klub_basket.intersection(klub_renang) 
+print("\nSiswa yang mengikuti kedua klub (Basket dan Renang):")
+print(siswa_kedua_klub)
+siswa_satu_klub = klub_basket.symmetric_difference(klub_renang) 
+print("\nSiswa yang hanya mengikuti satu klub saja:")
+print(siswa_satu_klub)
+siswa_setidaknya_satu_klub = klub_basket.union(klub_renang)
+print("\nSemua siswa unik yang mengikuti setidaknya satu dari kedua klub:")
+print(siswa_setidaknya_satu_klub)
+jumlah_siswa_unik = len(siswa_setidaknya_satu_klub)
+print("\nJumlah siswa unik yang mengikuti setidaknya satu dari kedua klub:")
+print(jumlah_siswa_unik)
