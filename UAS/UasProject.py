@@ -1,119 +1,159 @@
-# Program sistem peminjaman buku di perpustakaan Cahaya Ilmu
-# Daftar buku yang tersedia di perpustakaan
-# Variabel nama buku & harga buku dengan daftar list
-nama_buku = ["Bahasa Indonesia", "Matematika", "PPKN", "PAI", "Algoritma Pemrograman"] 
+from datetime import datetime, timedelta
+
+# Daftar buku yang tersedia di perpustakaan Cahaya Ilmu
+nama_buku = ["Hidup Manis Ala Rasulullah", "Sabar Menghadapi Cobaan", "Jalur Langit", "Gak Bisa Yura Aku Capek", "Laskar Pelangi"] 
 harga_buku = [50000, 60000, 55000, 45000, 70000]
-buku_tersedia = list(zip(nama_buku, harga_buku)) #list yang berisi tuple
+kode_buku = [879, 698, 756, 987, 860]
+penerbit_buku = ["Ratnani", "Bilif Abdullah", "Hiliyah", "Ust.Hanan Ataki", "Bintang Samudra"]
+
+# Menggabungkan semua informasi buku ke dalam daftar tuple
+buku_tersedia = list(zip(nama_buku, harga_buku, kode_buku, penerbit_buku))
+
 # Dictionary untuk menyimpan data peminjaman
-peminjaman = {} #variabel peminjaman dengan dictionary kosong
+peminjaman = {}
 
-# fungsi tampilkan buku dengan parameter kosong
 def tampilkan_buku():
-    """Menampilkan daftar buku yang tersedia di perpustakaan beserta harganya."""
+    """Menampilkan daftar buku yang tersedia beserta ID buku."""
     print("\nDaftar Buku Tersedia:")
-    # jika buku tersedia
-    if buku_tersedia:
-        for buku in buku_tersedia:
-            print(f"- {buku[0]} (Harga: Rp {buku[1]})")
-    else: #jika tidak ada buku yang tersedia cetak di bawah ini
-        print("Tidak ada buku yang tersedia.")
+    print("ID Buku | Judul Buku                     | Penerbit")
+    print("---------------------------------------------------")
+    for buku in buku_tersedia:
+        print(f"{buku[2]:<7} | {buku[0]:<30} | {buku[3]}")
 
-# mendefinisikan fungsi pinjam buku dengan parameter nama anggota dan judul buku
-def pinjam_buku(nama_anggota, judul_buku):
-    """Memproses peminjaman buku."""
-    # Mengubah input menjadi huruf kecil untuk pencocokan
-    judul_buku = judul_buku.lower()
-    for buku in buku_tersedia: 
-        if buku[0].lower() == judul_buku:  # membandingkan dengan lowercase
+def tampilkan_harga_buku():
+    """Menampilkan daftar harga buku berdasarkan ID buku."""
+    print("\nDaftar Harga Buku:")
+    print("ID Buku | Harga")
+    print("----------------")
+    for buku in buku_tersedia:
+        print(f"{buku[2]:<7} | Rp {buku[1]}")
+
+def pinjam_buku(nama_anggota, id_buku, tanggal_peminjaman): 
+    """Memproses peminjaman buku berdasarkan ID buku."""
+    for buku in buku_tersedia:
+        if buku[2] == id_buku:
             if nama_anggota in peminjaman:
-                peminjaman[nama_anggota].append(buku)
+                peminjaman[nama_anggota].append((buku, tanggal_peminjaman))
             else:
-                peminjaman[nama_anggota] = [buku]
+                peminjaman[nama_anggota] = [(buku, tanggal_peminjaman)]
             buku_tersedia.remove(buku)
-            print(f"{nama_anggota} berhasil meminjam '{judul_buku}'.")
+            print(f"{nama_anggota} berhasil meminjam buku '{buku[0]}' pada tanggal {tanggal_peminjaman}.")
             return
-    print(f"Buku '{judul_buku}' tidak tersedia.")
+    print(f"Buku dengan ID {id_buku} tidak tersedia.")
 
-# mendefinisikan fungsi kembali buku dengan parameter nama anggota, judul buku, keterlambatan
-def kembalikan_buku(nama_anggota, judul_buku, keterlambatan):
-    """Memproses pengembalian buku."""
-    judul_buku = judul_buku.lower()  # mengubah judul buku menjadi huruf kecil
-    for buku in peminjaman[nama_anggota]:
-        if buku[0].lower() == judul_buku:  # membandingkan dengan lowercase
-            peminjaman[nama_anggota].remove(buku)
-            buku_tersedia.append(buku)
+def kembalikan_buku(nama_anggota, id_buku, tanggal_pengembalian):
+    """Memproses pengembalian buku dengan menghitung keterlambatan dan denda."""
+    if nama_anggota in peminjaman:
+        for i, (buku, tanggal_peminjaman) in enumerate(peminjaman[nama_anggota]):
+            if buku[2] == id_buku:
+                peminjaman[nama_anggota].pop(i)
+                buku_tersedia.append(buku)
 
-            denda = keterlambatan * 1000
-            if keterlambatan > 0: 
-                print(f"{nama_anggota} mengembalikan buku '{judul_buku}' dengan denda Rp {denda}.")
-            else:
-                print(f"{nama_anggota} mengembalikan buku '{judul_buku}' tepat waktu. Tidak ada denda.")
-            
-            # Menghapus nama anggota dari peminjaman jika tidak ada buku lagi
-            if not peminjaman[nama_anggota]:
-                del peminjaman[nama_anggota]
+                # Menghitung tanggal peminjaman dan pengembalian
+                tgl_peminjaman = datetime.strptime(tanggal_peminjaman, "%d-%m-%Y")
+                tgl_pengembalian = datetime.strptime(tanggal_pengembalian, "%d-%m-%Y")
+                batas_peminjaman = tgl_peminjaman + timedelta(days=15)
+                keterlambatan = (tgl_pengembalian - batas_peminjaman).days
 
-            return
-    print(f"{nama_anggota} tidak meminjam buku '{judul_buku}'.")
+                if keterlambatan > 0:
+                    denda = keterlambatan * 1000
+                    print(f"{nama_anggota} mengembalikan buku '{buku[0]}' terlambat {keterlambatan} hari dengan denda Rp {denda}.")
+                else:
+                    print(f"{nama_anggota} mengembalikan buku '{buku[0]}' tepat waktu. Tidak ada denda.")
+
+                if not peminjaman[nama_anggota]:
+                    del peminjaman[nama_anggota]
+                return
+    print(f"{nama_anggota} tidak meminjam buku dengan ID {id_buku}.")
 
 def tampilkan_peminjam():
-    """Menampilkan daftar peminjam dan buku yang dipinjam."""
+    """Menampilkan daftar peminjam beserta buku yang dipinjam."""
     print("\nDaftar Peminjam Buku:")
     if peminjaman:
         for nama_anggota, buku_list in peminjaman.items():
-            buku_judul = ', '.join(buku[0] for buku in buku_list)
-            print(f"- {nama_anggota} meminjam: {buku_judul}")
+            for buku, tanggal_peminjaman in buku_list:
+                print(f"- {nama_anggota} meminjam buku '{buku[0]}' (ID: {buku[2]}) pada tanggal {tanggal_peminjaman}.")
     else:
         print("Tidak ada peminjam saat ini.")
 
-def laporkan_buku_hilang(nama_anggota, judul_buku):
-    """Memproses laporan buku hilang dan menghitung denda berdasarkan harga buku."""
-    judul_buku = judul_buku.lower()  # mengubah judul buku menjadi huruf kecil
-    for buku in peminjaman[nama_anggota]:
-        if buku[0].lower() == judul_buku:  # membandingkan dengan lowercase
-            peminjaman[nama_anggota].remove(buku)
-            denda = buku[1]
-            print(f"{nama_anggota} melaporkan buku '{judul_buku}' hilang. Denda yang harus dibayar adalah Rp {denda}.")
-            # Menghapus nama anggota dari peminjaman jika tidak ada buku lagi
-            if not peminjaman[nama_anggota]:
-                del peminjaman[nama_anggota]
-            return
-    print(f"{nama_anggota} tidak meminjam buku '{judul_buku}'.")
+def laporkan_buku_hilang(nama_anggota, id_buku):
+    """Memproses laporan buku hilang."""
+    if nama_anggota in peminjaman:
+        for i, (buku, _) in enumerate(peminjaman[nama_anggota]):
+            if buku[2] == id_buku:
+                peminjaman[nama_anggota].pop(i)
+                denda = buku[1]
+                print(f"{nama_anggota} melaporkan buku '{buku[0]}' hilang. Denda yang harus dibayar adalah Rp {denda}.")
+                if not peminjaman[nama_anggota]:
+                    del peminjaman[nama_anggota]
+                return
+    print(f"{nama_anggota} tidak meminjam buku dengan ID {id_buku}.")
 
-# Menu 
+def update_buku(id_buku, judul_baru, harga_baru):
+    """Memperbarui data buku berdasarkan ID buku."""
+    for i, buku in enumerate(buku_tersedia):
+        if buku[2] == id_buku:
+            buku_tersedia[i] = (judul_baru, harga_baru, id_buku, buku[3])
+            print(f"Buku dengan ID {id_buku} berhasil diperbarui menjadi '{judul_baru}' dengan harga Rp {harga_baru}.")
+            return
+    print(f"Buku dengan ID {id_buku} tidak ditemukan.")
+
+def hapus_buku(id_buku):
+    """Menghapus buku dari daftar berdasarkan ID buku."""
+    for i, buku in enumerate(buku_tersedia):
+        if buku[2] == id_buku:
+            buku_tersedia.pop(i)
+            print(f"Buku '{buku[0]}' berhasil dihapus dari daftar.")
+            return
+    print(f"Buku dengan ID {id_buku} tidak ditemukan.")
+
 def main():
     while True:
-        print("\nMenu Peminjaman Buku Di Perpustakaan Cahaya Ilmu:")
+        print("\n===SISTEM PEMINJAMAN BUKU DI PERPUSTAKAAN CAHAYA ILMU===")
+        print("Menu Peminjaman Buku di Perpustakaan Cahaya Ilmu:")
         print("1. Tampilkan Buku")
-        print("2. Pinjam Buku")
-        print("3. Tampilkan Peminjam")  # Pindahkan Tampilkan Peminjam ke menu nomor 3
-        print("4. Kembalikan Buku")
-        print("5. Laporkan Buku Hilang")
-        print("6. Keluar")
-        pilihan = input("Pilih menu (1/2/3/4/5): ")
+        print("2. Tampilkan Harga Buku")
+        print("3. Pinjam Buku")
+        print("4. Tampilkan Peminjam")
+        print("5. Kembalikan Buku")
+        print("6. Laporkan Buku Hilang")
+        print("7. Update Data Buku")
+        print("8. Hapus Data Buku")
+        print("9. Keluar")
+        pilihan = input("Pilih menu (1/2/3/4/5/6/7/8/9): ")
 
         if pilihan == '1':
             tampilkan_buku()
         elif pilihan == '2':
-            nama = input("Masukkan nama orang yang ingin meminjam buku: ").lower()  # Menambahkan lower() untuk nama
-            judul = input("Masukkan judul buku yang ingin dipinjam: ").lower()  # Menambahkan lower() untuk judul buku
-            pinjam_buku(nama, judul)
-        elif pilihan == '3':  # Tampilkan peminjam berada di sini sekarang
-            tampilkan_peminjam()
+            tampilkan_harga_buku()
+        elif pilihan == '3':
+            nama = input("Masukkan nama peminjam: ").capitalize()
+            id_buku = int(input("Masukkan ID buku yang ingin dipinjam: "))
+            tanggal = input("Masukkan tanggal peminjaman (DD-MM-YYYY): ")
+            pinjam_buku(nama, id_buku, tanggal)
         elif pilihan == '4':
-            nama = input("Masukkan nama orang yang ingin mengembalikan buku: ").lower()
-            judul = input("Masukkan judul buku yang ingin dikembalikan: ").lower()
-            keterlambatan = int(input("Masukkan jumlah hari keterlambatan: "))
-            kembalikan_buku(nama, judul, keterlambatan)
+            tampilkan_peminjam()
         elif pilihan == '5':
-            nama = input("Masukkan nama orang yang ingin melaporkan buku hilang: ").lower()
-            judul = input("Masukkan judul buku yang ingin dilaporkan hilang: ").lower()
-            laporkan_buku_hilang(nama, judul)
+            nama = input("Masukkan nama pengembali: ").capitalize()
+            id_buku = int(input("Masukkan ID buku yang ingin dikembalikan: "))
+            tanggal_pengembalian = input("Masukkan tanggal pengembalian (DD-MM-YYYY): ")
+            kembalikan_buku(nama, id_buku, tanggal_pengembalian)
         elif pilihan == '6':
+            nama = input("Masukkan nama pelapor: ").capitalize()
+            id_buku = int(input("Masukkan ID buku yang hilang: "))
+            laporkan_buku_hilang(nama, id_buku)
+        elif pilihan == '7':
+            id_buku = int(input("Masukkan ID buku yang ingin diperbarui: "))
+            judul_baru = input("Masukkan judul buku baru: ")
+            harga_baru = int(input("Masukkan harga buku baru: "))
+            update_buku(id_buku, judul_baru, harga_baru)
+        elif pilihan == '8':
+            id_buku = int(input("Masukkan ID buku yang ingin dihapus: "))
+            hapus_buku(id_buku)
+        elif pilihan == '9':
             print("Terima kasih telah menggunakan sistem peminjaman Perpustakaan 'Cahaya Ilmu'.")
             break
         else:
             print("Pilihan tidak valid. Silakan pilih menu yang tersedia.")
 
 main()
-
