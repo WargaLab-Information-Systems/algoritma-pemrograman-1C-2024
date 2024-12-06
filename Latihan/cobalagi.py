@@ -15,10 +15,7 @@ hasil_and = x and y
 hasil_or = x or y
 hasil_not = x not y
 
-untuk union atau gabungan
 
-
-irisan 
 
 
 # ## printah if
@@ -58,4 +55,5 @@ irisan
 # #     print("lulus")
 # # else:
 # #     print("tidak lulus")
+
 
