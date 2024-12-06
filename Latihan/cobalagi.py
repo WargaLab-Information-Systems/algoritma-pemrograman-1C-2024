@@ -1,3 +1,4 @@
+
 print("berat badan saya adalah"+str(5))
 
 # untuk operator boolean
@@ -14,6 +15,7 @@ y = False
 hasil_and = x and y
 hasil_or = x or y
 hasil_not = x not y
+
 
 
 
@@ -37,9 +39,6 @@ hasil_not = x not y
 # number = 20
 # result = "Genap" if number % 2 == 0 else "Ganjil"
 # print(result)
-
-
-
 
 
 
