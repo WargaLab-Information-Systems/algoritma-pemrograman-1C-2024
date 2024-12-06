@@ -1,0 +1,2 @@
+del (nama)
+print (nama)
