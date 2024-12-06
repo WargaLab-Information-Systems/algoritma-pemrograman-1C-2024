@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="soalmod2"/>
+        <attribute name="authors" value="ambon"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-07 11:20:04 PM"/>
+        <attribute name="created" value="YW1ib247REVTS1RPUC04TkZBOFVROzIwMjQtMTAtMDc7MTE6MDA6MjIgUE07Mjg2NQ=="/>
+        <attribute name="edited" value="YW1ib247REVTS1RPUC04TkZBOFVROzIwMjQtMTAtMDc7MTE6MjA6MDQgUE07MTsyOTc1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="skorida, skorjaka" type="Real" array="False" size=""/>
+            <declare name="ipkida, ipkjaka" type="Real" array="False" size=""/>
+            <assign variable="skorida" expression="1000"/>
+            <assign variable="skorjaka" expression="1100"/>
+            <assign variable="ipkida" expression="3.5"/>
+            <assign variable="ipkjaka" expression="3.5"/>
+            <if expression="skorida&gt;=1100 and ipkida&gt;=3.0">
+                <then>
+                    <output expression="&quot;skor dan ipk yang dimiliki ida memenuhi standar kelulusan penerima beasiswa&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;skor dan ipk yang dimiliki ida tidak memenuhi standar kelulusan penerima beasiswa&quot;" newline="True"/>
+                </else>
+            </if>
+            <if expression="skorjaka&gt;=1100 and ipkjaka&gt;=3.0">
+                <then>
+                    <output expression="&quot;skor dan ipk yang dimiliki jaka memenuhi standar kelulusan penerima beasiswa&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;skor dan ipk yang dimiliki jaka tidak memenuhi standar kelulusan penerima beasiswa&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
